@@ -18,15 +18,21 @@ const displayShow = async () => {
     },10);
 };
 
+const resetSearch = () => {
+    inputBox.value = "";
+}
+
 btnSearch.addEventListener("click", (e) => {
     e.preventDefault();
     displayShow();
+    resetSearch();
 });
 
 inputBox.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         e.preventDefault();
         displayShow();
+        resetSearch();
     }
 });
 
